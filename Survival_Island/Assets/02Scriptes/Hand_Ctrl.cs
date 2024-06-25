@@ -12,6 +12,7 @@ public class Hand_Ctrl : MonoBehaviour
     public Light flashLight;
     public AudioClip flashsound;   //소리파일
     public AudioSource A_sourse;   //오디오 소스
+    public bool Isrun = false;
     void Start()    //게임 시작 전 호출
     {
         
@@ -40,11 +41,13 @@ public class Hand_Ctrl : MonoBehaviour
         {
 
                 ComBatSGAni.Play("running");
+            Isrun = true;
         }
         
         else if (Input.GetKeyUp(KeyCode.LeftShift))    //왼쪽 쉬프트 키를 띄었다면
         {
             ComBatSGAni.Play("runStop");
+            Isrun = false;
         }
     }
 }
